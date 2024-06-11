@@ -1,0 +1,17 @@
+version: 0.2
+
+env:
+  variables:
+    PROJECT_NAME: todo-app
+    ENVIRONMENT: prod
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon EKS...
+
+  build:
+    commands:
+      - echo Deploying helm chart...
+      - echo Helm chart are successfully deployed!
+      - echo Pipeline successfully passed!

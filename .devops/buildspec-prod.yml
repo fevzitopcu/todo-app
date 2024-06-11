@@ -1,0 +1,23 @@
+version: 0.2
+
+env:
+  variables:
+    PROJECT: todo-app
+    ENVIRONMENT: prod
+
+phases:
+  pre_build:
+      - echo Logging in to Amazon ECR...
+ 
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - echo Build completed.
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+artifacts:
+  files:
+    - imagedefinitions.txt
